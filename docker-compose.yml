@@ -1,0 +1,31 @@
+services:
+  minitel-twitch:
+    build: .
+    environment:
+      - TWITCH_CHANNEL
+      - ALERT_DURATION_MS=4000
+    restart: unless-stopped
+    x-casaos:
+      envs:
+        - container: TWITCH_CHANNEL
+          description:
+            en_us: Twitch channel name (without #)
+        - container: ALERT_DURATION_MS
+          description:
+            en_us: How long sub/follow alerts stay on screen (ms)
+      ports:
+        - container: "8080"
+          description:
+            en_us: WebSocket port — point the Minitel ESP32 here
+
+x-casaos:
+  main: minitel-twitch
+  title:
+    en_us: Minitel Twitch
+  tagline:
+    en_us: Display Twitch chat on a Minitel terminal
+  description:
+    en_us: Streams Twitch chat and subscription alerts to a Minitel 1B via its WiFi ESP32 adapter.
+  icon: https://raw.githubusercontent.com/you/minitel-twitch/main/icon.png
+  category: utilities
+  port_map: "8080"
