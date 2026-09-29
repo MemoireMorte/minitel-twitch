@@ -1,10 +1,16 @@
+name: minitel-twitch
 services:
   minitel-twitch:
     image: ghcr.io/memoiremorte/minitel-twitch:latest
-    build: .
+    container_name: minitel-twitch
     environment:
-      - TWITCH_CHANNEL
-      - ALERT_DURATION_MS=4000
+      TWITCH_CHANNEL: ""
+      ALERT_DURATION_MS: "4000"
+    ports:
+      - target: 8080
+        published: "8080"
+        protocol: tcp
+    network_mode: bridge
     restart: unless-stopped
     x-casaos:
       envs:
@@ -21,6 +27,11 @@ services:
 
 x-casaos:
   main: minitel-twitch
+  architectures:
+    - amd64
+    - arm64
+  author: MemoireMorte
+  developer: MemoireMorte
   title:
     en_us: Minitel Twitch
   tagline:
@@ -28,5 +39,8 @@ x-casaos:
   description:
     en_us: Streams Twitch chat and subscription alerts to a Minitel 1B via its WiFi ESP32 adapter.
   icon: https://raw.githubusercontent.com/MemoireMorte/minitel-twitch/main/icon.svg
-  category: utilities
+  category: Utilities
+  scheme: http
+  hostname: ""
+  index: /
   port_map: "8080"
