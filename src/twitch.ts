@@ -10,7 +10,7 @@ const IRC_URL = 'wss://irc-ws.chat.twitch.tv:443';
 const RECONNECT_BASE_MS = 2000;
 const RECONNECT_MAX_MS = 60000;
 
-const SUB_TYPES: SubEventType[] = ['sub', 'resub', 'subgift', 'anonsubgift', 'submysterygift'];
+const SUB_TYPES: SubEventType[] = ['sub', 'resub', 'subgift', 'anonsubgift', 'submysterygift', 'raid'];
 
 export class TwitchClient {
   private ws: WebSocket | null = null;
@@ -109,10 +109,12 @@ export class TwitchClient {
     const type = tags['msg-id'] as SubEventType;
     if (!SUB_TYPES.includes(type)) return null;
     const months = parseInt(tags['msg-param-cumulative-months'] ?? '0') || undefined;
+    const viewers = parseInt(tags['msg-param-viewerCount'] ?? '0') || undefined;
     return {
       username: tags['login'] ?? tags['display-name'] ?? 'anonymous',
       type,
       months,
+      viewers,
     };
   }
 }

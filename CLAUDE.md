@@ -69,4 +69,5 @@ npm run dev      # watch mode (restarts on file change)
 - Twitch IRC is anonymous (justinfan) — no OAuth needed for read-only chat + sub events
 - Accent handling: strips accents via NFD normalization (v1); proper SS2 Videotex encoding is a future improvement
 - No colors: Minitel 1B renders all 8 colors as grey levels; no color escape sequences are sent
-- Alert flow: clear screen → show alert → wait ALERT_DURATION_MS → clear screen → chat resumes scrolling
+- Alert flow: clear screen → beep → show alert → wait ALERT_DURATION_MS → clear screen → chat resumes scrolling
+- Toggles: `ALERTS_ENABLED=false` disables sub/raid alerts; `BELL_ENABLED=false` disables the beep (anything but `false` = on)

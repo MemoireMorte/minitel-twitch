@@ -19,6 +19,8 @@ COPY --from=builder /app/package.json ./package.json
 
 ENV MINITEL_WS_PORT=8080
 ENV ALERT_DURATION_MS=4000
+ENV ALERTS_ENABLED=true
+ENV BELL_ENABLED=true
 
 EXPOSE 8080
 

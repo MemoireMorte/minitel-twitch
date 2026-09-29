@@ -6,6 +6,8 @@ services:
     environment:
       TWITCH_CHANNEL: ""
       ALERT_DURATION_MS: "4000"
+      ALERTS_ENABLED: "true"
+      BELL_ENABLED: "true"
     ports:
       - target: 8080
         published: "8080"
@@ -20,6 +22,12 @@ services:
         - container: ALERT_DURATION_MS
           description:
             en_us: How long sub/follow alerts stay on screen (ms)
+        - container: ALERTS_ENABLED
+          description:
+            en_us: Show full-screen sub/raid alerts (true/false)
+        - container: BELL_ENABLED
+          description:
+            en_us: Beep the Minitel when an alert shows (true/false)
       ports:
         - container: "8080"
           description:

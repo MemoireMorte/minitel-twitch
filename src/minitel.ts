@@ -7,6 +7,7 @@ export const ROWS = 24; // reserve row 25 for status
 
 export const VT = {
   CLEAR:       Buffer.from([0x0C]),        // FF  — clear screen + cursor home
+  BEEP:        Buffer.from([0x07]),        // BEL — audible beep
   HOME:        Buffer.from([0x1E]),        // RS  — cursor home (no clear)
   CURSOR_OFF:  Buffer.from([0x14]),        // COF
   CURSOR_ON:   Buffer.from([0x11]),        // CON

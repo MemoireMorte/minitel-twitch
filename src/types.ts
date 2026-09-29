@@ -6,10 +6,11 @@ export interface ChatMessage {
   role: UserRole;
 }
 
-export type SubEventType = 'sub' | 'resub' | 'subgift' | 'anonsubgift' | 'submysterygift';
+export type SubEventType = 'sub' | 'resub' | 'subgift' | 'anonsubgift' | 'submysterygift' | 'raid';
 
 export interface SubEvent {
   username: string;
   type: SubEventType;
   months?: number;
+  viewers?: number;
 }

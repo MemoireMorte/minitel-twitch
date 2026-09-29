@@ -19,16 +19,18 @@ function labelFor(event: SubEvent): string {
     case 'subgift':        return '*** SUB OFFERT ! ***';
     case 'anonsubgift':    return '*** SUB ANONYME ! ***';
     case 'submysterygift': return '*** MULTI-SUB ! ***';
+    case 'raid':           return `*** RAID ${event.viewers ?? ''} VIEWERS ! ***`;
   }
 }
 
-export function buildSubAlert(event: SubEvent): Buffer {
+export function buildSubAlert(event: SubEvent, bell: boolean): Buffer {
   const startRow = Math.floor(ROWS / 2) - 3;
   const label = labelFor(event);
   const name = event.username.toUpperCase().slice(0, CONTENT_WIDTH);
 
   return Buffer.concat([
     VT.CLEAR,
+    bell ? VT.BEEP : Buffer.alloc(0),
     VT.CURSOR_OFF,
     VT.moveTo(startRow, 1),
     invertedLine(SEPARATOR),
