@@ -1,5 +1,6 @@
 services:
   minitel-twitch:
+    image: ghcr.io/memoiremorte/minitel-twitch:latest
     build: .
     environment:
       - TWITCH_CHANNEL

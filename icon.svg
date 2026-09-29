@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <!-- Background -->
+  <rect width="512" height="512" rx="88" fill="#1a1a2e"/>
+
+  <!-- Screen unit body -->
+  <rect x="106" y="80" width="300" height="216" rx="18" fill="#e2ddd2"/>
+
+  <!-- Screen -->
+  <rect x="130" y="103" width="252" height="168" rx="6" fill="#0d1020"/>
+
+  <!-- Chat lines on screen -->
+  <rect x="150" y="122" width="148" height="7" rx="3" fill="#5a5a72"/>
+  <rect x="150" y="139" width="108" height="7" rx="3" fill="#5a5a72"/>
+  <rect x="150" y="156" width="172" height="7" rx="3" fill="#5a5a72"/>
+  <rect x="150" y="173" width="96"  height="7" rx="3" fill="#5a5a72"/>
+  <rect x="150" y="190" width="130" height="7" rx="3" fill="#5a5a72"/>
+
+  <!-- Inverted username bar (nod to the inversion feature) -->
+  <rect x="150" y="214" width="212" height="16" rx="3" fill="#e2ddd2"/>
+  <rect x="154" y="218" width="64"  height="8"  rx="2" fill="#0d1020"/>
+
+  <!-- Keyboard unit -->
+  <rect x="84" y="308" width="344" height="118" rx="16" fill="#d2cec2"/>
+
+  <!-- Key rows -->
+  <rect x="106" y="328" width="300" height="11" rx="4" fill="#b4b0a4"/>
+  <rect x="106" y="349" width="300" height="11" rx="4" fill="#b4b0a4"/>
+  <rect x="114" y="370" width="268" height="11" rx="4" fill="#b4b0a4"/>
+  <rect x="122" y="391" width="220" height="11" rx="4" fill="#b4b0a4"/>
+</svg>
