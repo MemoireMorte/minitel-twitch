@@ -26,6 +26,6 @@ x-casaos:
     en_us: Display Twitch chat on a Minitel terminal
   description:
     en_us: Streams Twitch chat and subscription alerts to a Minitel 1B via its WiFi ESP32 adapter.
-  icon: https://raw.githubusercontent.com/you/minitel-twitch/main/icon.png
+  icon: https://raw.githubusercontent.com/MemoireMorte/minitel-twitch/main/icon.png
   category: utilities
   port_map: "8080"
