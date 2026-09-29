@@ -24,4 +24,6 @@ ENV BELL_ENABLED=true
 
 EXPOSE 8080
 
+USER node
+
 CMD ["node", "dist/index.js"]

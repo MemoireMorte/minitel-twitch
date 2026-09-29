@@ -29,7 +29,7 @@ server.onConnect(() => {
 
 twitch.onMessage((msg) => {
   if (alertActive) return;
-  server.send(formatChatLine(msg));
+  server.sendDroppable(formatChatLine(msg));
 });
 
 twitch.onSub((event) => {
